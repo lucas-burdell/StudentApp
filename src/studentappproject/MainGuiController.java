@@ -19,18 +19,20 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
+import test.Student;
 
 /**
  *
  * @author lucas.burdell
  */
-public class FXMLDocumentController implements Initializable {
+public class MainGuiController implements Initializable {
 
     @FXML
     private ScrollPane scroll;
@@ -40,6 +42,30 @@ public class FXMLDocumentController implements Initializable {
     private ImageView campusmapimage;
     @FXML
     private TabPane maintabpane;
+
+    private Student student;
+
+    @FXML
+    private VBox classList;
+
+    /**
+     * @return the student
+     */
+    public Student getStudent() {
+        return student;
+    }
+
+    /**
+     * @param student the student to set
+     */
+    public void setStudent(Student student) {
+        this.student = student;
+        for (int i = 0; i < student.getClasses().size(); i++) {
+            String elementAt = student.getClasses().get(i);
+            Text text = new Text(elementAt);
+            classList.getChildren().add(text);
+        }
+    }
 
     private static class Announcement {
 
@@ -105,7 +131,7 @@ public class FXMLDocumentController implements Initializable {
     }
 
     private static class AnnouncementCategory {
-        
+
         private ArrayList<Announcement> announcements = new ArrayList<>();
         private TextFlow container = new TextFlow();
         private TitledPane title;
@@ -127,7 +153,7 @@ public class FXMLDocumentController implements Initializable {
         public ArrayList<Announcement> getAnnouncements() {
             return announcements;
         }
-        
+
         public void addAnnouncement(Announcement announcement) {
             getAnnouncements().add(announcement);
             getContainer().getChildren().add(announcement.getHeader());

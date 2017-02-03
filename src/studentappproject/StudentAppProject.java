@@ -16,6 +16,7 @@
  */
 package studentappproject;
 
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
@@ -23,7 +24,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import test.Test;
+import test.Student;
 
 /**
  * 
@@ -34,14 +35,35 @@ import test.Test;
 //http://htmlunit.sourceforge.net/
 public class StudentAppProject extends Application {
     
+    private Stage mainStage;
+    private Scene mainScene;
+    private static StudentAppProject appController;
+    
+    
+    public void loadMain(Student student) {
+        Parent root;
+        try {
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainGui.fxml"));
+            root = loader.load();
+            MainGuiController controller = (MainGuiController) loader.getController();
+            controller.setStudent(student);
+            mainScene.setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(StudentAppProject.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("PasswordAsker.fxml"));
+        appController = this;
+        FXMLLoader loader =  new FXMLLoader(getClass().getResource("PasswordAsker.fxml"));
+        Parent root = loader.load();
         
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.show();
+        mainScene = new Scene(root);
+        mainStage = stage;
+        mainStage.setScene(mainScene);
+        mainStage.show();
     }
 
     /**
@@ -54,5 +76,11 @@ public class StudentAppProject extends Application {
             Logger.getLogger(StudentAppProject.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
+    /**
+     * @return the appController
+     */
+    public static StudentAppProject getAppController() {
+        return appController;
+    }
 }
