@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package studentappproject.gui;
+package studentappprojectGui;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -24,7 +24,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import studentappproject.student.Student;
+import student.Student;
 
 /**
  * 

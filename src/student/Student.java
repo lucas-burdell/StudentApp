@@ -1,4 +1,4 @@
-package studentappproject.student;
+package student;
 
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlButtonInput;
