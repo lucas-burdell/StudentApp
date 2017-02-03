@@ -1,4 +1,4 @@
-package studentappproject;
+package studentappprojectGui;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
-import test.Student;
+import student.Student;
 
 /**
  *
