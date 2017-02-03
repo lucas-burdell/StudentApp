@@ -1,4 +1,4 @@
-package studentappprojectGui;
+package gui;
 
 import test.Test;
 import java.net.URL;

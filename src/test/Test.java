@@ -52,7 +52,7 @@ public class Test {
             
             HtmlButtonInput button = form.getInputByName("btnLogin");
             HtmlPage page2 = button.click();
-            webClient.waitForBackgroundJavaScript(6000);
+            webClient.waitForBackgroundJavaScript(2000);
             page2 = webClient.getPage("https://portals.blackburn.edu/estudent/index.asp");
             //System.out.println(page2.asXml());
             
