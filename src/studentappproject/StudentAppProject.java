@@ -16,11 +16,14 @@
  */
 package studentappproject;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import test.Test;
 
 /**
  * 
@@ -33,7 +36,7 @@ public class StudentAppProject extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("PasswordAsker.fxml"));
         
         Scene scene = new Scene(root);
         
@@ -45,7 +48,11 @@ public class StudentAppProject extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        launch(args);
+        try {
+            launch(args);
+        } catch (Exception ex) {
+            Logger.getLogger(StudentAppProject.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }
