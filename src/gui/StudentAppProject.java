@@ -20,46 +20,49 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import student.Student;
 
 /**
- * 
+ *
  *
  * @author Lucas Burdell lucas.burdell@blackburn.edu
  */
-
 //http://htmlunit.sourceforge.net/
 public class StudentAppProject extends Application {
-    
+
     private Stage mainStage;
     private Scene mainScene;
     private static StudentAppProject appController;
-    
-    
+
     public void loadMain(Student student) {
-        Parent root;
-        try {
-            
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainGui.fxml"));
-            root = loader.load();
-            MainGuiController controller = (MainGuiController) loader.getController();
-            controller.setStudent(student);
-            mainScene.setRoot(root);
-        } catch (IOException ex) {
-            Logger.getLogger(StudentAppProject.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("MainGui.fxml"));
+                    Parent root = loader.load();
+                    MainGuiController controller = (MainGuiController) loader.getController();
+                    controller.setStudent(student);
+                    mainScene.setRoot(root);
+                } catch (IOException ex) {
+                    Logger.getLogger(StudentAppProject.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
     }
-    
+
     @Override
     public void start(Stage stage) throws Exception {
         appController = this;
-        FXMLLoader loader =  new FXMLLoader(getClass().getResource("PasswordAsker.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("PasswordAsker.fxml"));
         Parent root = loader.load();
-        
+
         mainScene = new Scene(root);
         mainStage = stage;
         mainStage.setScene(mainScene);
