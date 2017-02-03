@@ -2,7 +2,7 @@
 This is an application to help Blackburn students by organizing various sources of information relevant to students.
 
 ## This application aims to:
-1. Make the announcements more accessible. Ex. Students could sort announcements by category and they could be uploaded as they come rather than once a day.
+1. Make the announcements more accessible. Ex. Students can sort announcements by category, and are sorted by day rather than by time sent.
 2. Load a transcript and show the majors and minors a student has credit towards.
 3. Show all of the clubs on campus with meeting times and members listed with a link to join.
 4. Automatically fill google calendar with class information retrieved from the portal.
