@@ -1,4 +1,4 @@
-package studentappprojectGui;
+package studentappproject.gui;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
-import student.Student;
+import studentappproject.student.Student;
 
 /**
  *
@@ -186,7 +186,7 @@ public class MainGuiController implements Initializable {
                 + " proof of concept, not a functional design.");
         special.addAnnouncement(test1);
         accordion.getPanes().add(special.getTitle());
-        campusmapimage.setImage(new Image("resources/campus-map.jpg"));
+        campusmapimage.setImage(new Image("studentappproject/resources/campus-map.jpg"));
         campusmapimage.fitWidthProperty().bind(maintabpane.widthProperty().subtract(25));
         campusmapimage.fitHeightProperty().bind(maintabpane.heightProperty().subtract(25));
     }

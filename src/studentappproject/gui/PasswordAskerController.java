@@ -1,4 +1,4 @@
-package studentappprojectGui;
+package studentappproject.gui;
 
 import test.Test;
 import java.net.URL;
@@ -11,7 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import student.Student;
+import studentappproject.student.Student;
 
 /**
  * FXML Controller class
