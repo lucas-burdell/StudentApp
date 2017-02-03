@@ -23,9 +23,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
+ * 
  *
  * @author Lucas Burdell lucas.burdell@blackburn.edu
  */
+
+//http://htmlunit.sourceforge.net/
 public class StudentAppProject extends Application {
     
     @Override
