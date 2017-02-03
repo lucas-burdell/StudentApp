@@ -2,11 +2,11 @@
 This is an application to help Blackburn students by organizing various sources of information relevant to students.
 
 ## This application aims to:
-1. Make the announcements more accessible. Ex. Students can sort announcements by category, and are sorted by day rather than by time sent.
-2. Load a transcript and show the majors and minors a student has credit towards.
-3. Show all of the clubs on campus with meeting times and members listed with a link to join.
-4. Automatically fill google calendar with class information retrieved from the portal.
-5. Provide a map of the campus and display locations of classrooms relavent to the student.
+* Make the "daily" announcements more accessible. 
+* Load a transcript and show the majors and minors a student has credit towards.
+* Show all of the clubs on campus with meeting times and members listed with a link to join.
+* Automatically fill google calendar with class information retrieved from the portal.
+* Provide a map of the campus and display locations of classrooms relavent to the student.
 
 ## Libraries used
 This application currently utilizes the [HtmlUnit](http://htmlunit.sourceforge.net/) library - a "GUI-less browser for Java programs" - to scrape data from the student portal web interface. 
