@@ -31,7 +31,7 @@ import java.util.ArrayList;
  */
 public class Test {
 
-    public static void tryLogin(String password) throws Exception {
+    public static void tryLogin(String username, String password) throws Exception {
         try (final WebClient webClient = new WebClient()) {
             webClient.getOptions().setJavaScriptEnabled(true);
             webClient.getOptions().setThrowExceptionOnFailingStatusCode(false);
@@ -47,7 +47,7 @@ public class Test {
             HtmlTextInput usernameE = form.getInputByName("txtUsername");
             HtmlPasswordInput passwordE = form.getInputByName("txtPassword");
             
-            usernameE.setValueAttribute("lucas.burdell");
+            usernameE.setValueAttribute(username);
             passwordE.setValueAttribute(password);
             
             HtmlButtonInput button = form.getInputByName("btnLogin");

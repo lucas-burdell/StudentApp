@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -22,6 +23,8 @@ public class PasswordAskerController implements Initializable {
     private PasswordField password;
     @FXML
     private Button submitPass;
+    @FXML
+    private TextField username;
 
     /**
      * Initializes the controller class.
@@ -34,7 +37,7 @@ public class PasswordAskerController implements Initializable {
     @FXML
     private void doLoginThing(ActionEvent event) {
         try {
-            Test.tryLogin(password.getText());
+            Test.tryLogin(username.getText(), password.getText());
         } catch (Exception ex) {
             Logger.getLogger(PasswordAskerController.class.getName()).log(Level.SEVERE, null, ex);
         }
