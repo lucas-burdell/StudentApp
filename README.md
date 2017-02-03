@@ -11,4 +11,5 @@ This is an application to help Blackburn students by organizing various sources 
 ## Libraries used
 This application currently utilizes the [HtmlUnit](http://htmlunit.sourceforge.net/) library - a "GUI-less browser for Java programs" - to scrape data from the student portal web interface. 
 
+## Miscellaneous
 Here is the original proposal document for the application: https://docs.google.com/document/d/1S6xX8MxyXgmxpAMRXq9L1a57CzUvItozuAIC_YuDWIo/edit?usp=sharing
