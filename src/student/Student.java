@@ -50,6 +50,7 @@ public class Student {
      */
     public static Student pullData(String username, String password) {
         
+        System.out.println("Pulling");
         ArrayList<String> classes = new ArrayList<>();
         String name = null;
         
@@ -57,15 +58,19 @@ public class Student {
             // tell HtmlUnit to shut up
             squelchErrorLogger(webClient);
             
-            
+            System.out.println("web client created");
             webClient.getOptions().setJavaScriptEnabled(true);
             webClient.getOptions().setThrowExceptionOnFailingStatusCode(false);
             webClient.getOptions().setThrowExceptionOnScriptError(false);
-            System.getProperties().put("org.apache.commons.logging.simplelog.defaultlog", "fatal");
-
+           // System.getProperties().put("org.apache.commons.logging.simplelog.defaultlog", "fatal");
+            
+            System.out.println("page loading");
             HtmlPage page = webClient.getPage("https://portals.blackburn.edu/estudent/login.asp");
             //System.out.println(page.getTitleText());
 
+            
+            System.out.println("page loaded");
+            
             HtmlForm form = (HtmlForm) page.getElementById("frmLogin");
             //System.out.println(form.asXml());
 
@@ -81,8 +86,12 @@ public class Student {
             //before loading the portal view.
             HtmlButtonInput button = form.getInputByName("btnLogin");
             HtmlPage page2 = button.click();
+            System.out.println("waiting for javascript");
             webClient.waitForBackgroundJavaScript(3000);
+            
+            System.out.println("retrieving new page");
             page2 = webClient.getPage("https://portals.blackburn.edu/estudent/index.asp");
+            
             //System.out.println(page2.asXml());
 
             // Retrieve the MyCourses table from the home page of the student portal.

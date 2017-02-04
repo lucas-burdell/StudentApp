@@ -56,6 +56,7 @@ public class PasswordAskerController implements Initializable {
         pool.submit(new Runnable(){
             @Override
             public void run() {
+                System.out.println("loading");
                 Student output = Student.pullData(username.getText(), password.getText());
                 StudentAppProject.getAppController().loadMain(output);
                 pool.shutdown();
